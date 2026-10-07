@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SparkDig</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#111;
+    color:white;
+}
+
+.app{
+    max-width:480px;
+    margin:auto;
+    padding:24px;
+}
+
+h1{
+    margin-top:10px;
+}
+
+.card{
+    background:#1d1d1d;
+    border-radius:16px;
+    padding:20px;
+    margin:15px 0;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    margin-top:10px;
+    border:0;
+    border-radius:12px;
+    font-size:16px;
+    font-weight:bold;
+}
+
+.mine{
+    background:#f5a623;
+    color:#111;
+}
+
+.bonus{
+    background:#333;
+    color:white;
+}
+
+.small{
+    color:#aaa;
+    font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<h1>🔥 SparkDig</h1>
+
+<div class="card">
+<p class="small">Your Balance</p>
+<h2 id="balance">5.00 SPARK</h2>
+</div>
+
+<div class="card">
+<h2>⛏️ Free Mining</h2>
+
+<p>Earn +5 SPARK every 24 hours.</p>
+
+<button class="mine" onclick="mine()">
+⛏️ Mine Now
+</button>
+
+<p id="status" class="small"></p>
+</div>
+
+<div class="card">
+<h2>🎁 Bonus Ads</h2>
+
+<p>Watch rewarded ads to earn additional SPARK.</p>
+
+<button class="bonus" onclick="bonus()">
+📺 Watch Ad & Earn +1 SPARK
+</button>
+
+<p id="bonusStatus" class="small">
+Daily bonus ads: 0/5
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+let balance = 5;
+let bonusCount = 0;
+
+function mine(){
+
+document.getElementById("status").innerText =
+"⛏️ Mining system is ready. Rewarded ads will be connected later.";
+
+}
+
+function bonus(){
+
+if(bonusCount >= 5){
+
+document.getElementById("bonusStatus").innerText =
+"🎁 Daily ad limit reached. Come back tomorrow.";
+
+return;
+
+}
+
+document.getElementById("bonusStatus").innerText =
+"📺 Rewarded ad system will be connected here.";
+
+}
+
+</script>
+
+</body>
+  </html>
